@@ -1,5 +1,5 @@
 ################################################################################
-# Project:  Lib Psycopg
+# Project:  Python packages
 # Purpose:  CMake build scripts
 # Author:   Dmitry Baryshnikov, dmitry.baryshnikov@nexgis.com
 ################################################################################
@@ -144,10 +144,6 @@ elseif(WIN32)
 else()
     set(FLAGS "NextGIS=TRUE")
 endif()
-
-foreach(LIB_DIR ${YAML_LIBRARIES})
-    set(BUILD_INCLUDES ${BUILD_INCLUDES} "-L$<TARGET_LINKER_FILE_DIR:${LIB_DIR}>")
-endforeach()
 
 # Download tarbal
 set(OUT_DIR_NAME ${PROJECT_NAME}-${IN_VERSION})
