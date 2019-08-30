@@ -162,6 +162,8 @@ if(NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/${OUT_DIR_NAME})
     execute_process(COMMAND ${CMAKE_COMMAND} -E tar xzf ${CMAKE_CURRENT_BINARY_DIR}/${OUT_NAME})
 endif()
 
+include(configure)
+
 macro(build_py ver)
     add_custom_target(build_py${ver} ALL
         COMMAND ${CMAKE_COMMAND} -E env "${FLAGS}"
